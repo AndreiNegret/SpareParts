@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Areas/Administrator/Views/Shared/_AdminLayout.cshtml";
+}
+@model SpareParts.Areas.Administrator.ClassModels.ProductViewModel
+
+<section class="content-header">
+    <h1>
+        Edit Product
+    </h1>
+
+</section>
+
+<section class="content">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="box box-primary">
+
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form method="post" asp-area="administrator" asp-controller="product" asp-action="edit">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" asp-for="Product.ProductName" required="required">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Price</label>
+                            <input type="text" class="form-control" asp-for="Product.Price" required="required">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputFile">Photo</label>
+                            <input type="file" class="form-control" asp-for="Product.Photo" accept="image/*" required="required">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="name">Quantity</label>
+                            <input type="text" class="form-control" asp-for="Product.Quantity" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Brand</label>
+                            <input type="text" class="form-control" asp-for="Product.Brand" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Supplier</label>
+                            <select asp-for="Product.SupplierId" asp-items="@Model.Suppliers"
+                                    class="form-control">
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select asp-for="Product.CategoryId" asp-items="@Model.Categories"
+                                    class="form-control">
+                            </select>
+                        </div>
+
+
+
+                        <!-- /.box-body -->
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <input type="hidden" asp-for="Product.ProductId" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

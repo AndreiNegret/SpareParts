@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Areas/Administrator/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content-header">
+    <h1>
+        Category List
+    </h1>
+
+</section>
+
+<section class="content">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Categories List</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="categoryTable" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Parent</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var category in ViewBag.categories)
+                            {
+                                <tr>
+                                    <td>@category.CategoryId</td>
+                                    <td>
+                                        <b>@category.Name</b>
+                                    </td>
+                                    <td>@category.Description</td>
+                                    <td> @(category.ParentCategory == null ? "": category.ParentCategory.Name)</td>
+                                    <td>
+                                        <a asp-area="administrator" asp-controller="category"
+                                           asp-action="edit" asp-route-id="@category.CategoryId">Edit</a> <span>|</span>
+
+                                        <a asp-area="administrator" asp-controller="category"
+                                           asp-action="delete" asp-route-id="@category.CategoryId" onclick="return confirm('Are you sure?')">Delete</a> <span>|</span>
+
+                                        <a asp-area="administrator" asp-controller="category"
+                                           asp-action="addsubcategory" asp-route-id="@category.CategoryId">Add Sub Category</a>
+                                    </td>
+
+                                </tr>
+                                if (category.Children != null && category.Children.Count != 0)
+                                {
+                                    foreach (var subCategory in category.Children)
+                                    {
+                                        <tr>
+                                            <td>@subCategory.CategoryId</td>
+                                            <td>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@subCategory.Name
+                                            </td>
+                                            <td>@subCategory.Description</td>
+                                            <td> @subCategory.ParentCategory.Name</td>
+                                            <td>
+                                                <a asp-area="administrator" asp-controller="category"
+                                                   asp-action="edit" asp-route-id="@subCategory.CategoryId">Edit</a> <span>|</span>
+                                                <a asp-area="administrator" asp-controller="category"
+                                                   asp-action="delete" asp-route-id="@subCategory.CategoryId" onclick="return confirm('Are you sure?')">Delete</a>
+                                            </td>
+                                        </tr>
+
+                                    }
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

@@ -1,74 +1,150 @@
 ﻿@page
 @model RegisterModel
 @{
-    Layout = null;
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Become a part of our community!";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Registration</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="~/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <link rel="stylesheet" href="~/css/adminlte.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="hold-transition register-page">
-    <div class="register-box">
-        <div class="register-logo">
-            <a href="~/Home"><b>Spare</b>Parts</a>
-        </div>
 
-        <div class="card">
-            <div class="card-body register-card-body">
-                <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                    <div class="d-flex justify-content-center">
-                        @*<i class="fas fa-car-alt" style="font-size:48px;color:#0094ff"></i>*@
-                        <i class="fa fa-gear fa-spin slow-spin" style="font-size:48px;color:#0094ff" ></i>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <h1 class="h3 mb-3 font-weight-normal">Please register</h1>
-                    </div>
-                    <h4>Create a new account!</h4>
-                    <hr />
-                    <div class="form-group">
-                        <label asp-for="Input.Email"></label>
-                        <input asp-for="Input.Email" class="form-control" />
-                        <span asp-validation-for="Input.Email" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Input.Password"></label>
-                        <input asp-for="Input.Password" class="form-control" />
-                        <span asp-validation-for="Input.Password" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Input.ConfirmPassword"></label>
-                        <input asp-for="Input.ConfirmPassword" class="form-control" />
-                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Register</button>
-                </form>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<h1 class="d-flex justify-content-center mt-5 mb-5">@ViewData["Title"]</h1>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="row">
+    <section class="col-12">
+        <section>
+            <div class="row d-flex justify-content-center col-12">
+                <div class="col-sm-10 col-md-6 col-lg-4 border border-success rounded m-24 mb-5">
+                    <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <h4 class="d-flex justify-content-center">Create a new account.</h4>
+                        <div class="d-flex justify-content-center">
+                            <i class="fa fa-car" style="font-size:48px;color:#0094ff"></i>
+                            <i class="d-flex justify-content-center fa fa-gear fa-spin slow-spin " style="font-size:48px;color:#0094ff"></i>
+                        </div>
+                        <hr />
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Input.Username"></label>
+                            <input asp-for="Input.Username" class="form-control" />
+                            <span asp-validation-for="Input.Username" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Email"></label>
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Password"></label>
+                            <input asp-for="Input.Password" class="form-control" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.ConfirmPassword"></label>
+                            <input asp-for="Input.ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Input.PhoneNumber"></label>
+                            <input asp-for="Input.PhoneNumber" class="form-control" />
+                            <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.FirstName"></label>
+                            <input asp-for="Input.FirstName" class="form-control" />
+                            <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.LastName"></label>
+                            <input asp-for="Input.LastName" class="form-control" />
+                            <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.City"></label>
+                            <input asp-for="Input.City" class="form-control" />
+                            <span asp-validation-for="Input.City" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Country"></label>
+                            <input asp-for="Input.Country" class="form-control" />
+                            <span asp-validation-for="Input.Country" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </div>
-    <script src="~/plugins/jquery/jquery.min.js"></script>
-    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="~/dist/js/adminlte.min.js"></script>
-</body>
-</html>
+        </section>
+                @*<div class="col-md-6 col-md-offset-2">
+                    <section>
+                        <h4>Use another service to register.</h4>
+                        <hr />
+                        @{
+                            if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                            {
+                                <div>
+                                    <p>
+                                        There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                                        for details on setting up this ASP.NET application to support logging in via external services.
+                                    </p>
+                                </div>
+                            }
+                            else
+                            {
+                                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                                    <div>
+                                        <p>
+                                            @foreach (var provider in Model.ExternalLogins)
+                                            {
+                                                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                            }
+                                        </p>
+                                    </div>
+                                </form>
+                            }
+                        }
+                    </section>
+                </div>*@
+</section>
+</div>
+
+<style>
+.center {
+    position: absolute;
+    left: 35%;
+}
+
+.form-control:focus {
+    border-color: #47b8fa !important;
+    box-shadow: 0 0 2px rgba(187, 28, 36, 1) !important;
+}
+
+.login-btn {
+    color: white;
+    background-color: #0195eb;
+    border-color: #47b8fa;
+}
+
+.login-btn:hover {
+    color: white;
+    background-color: #0195eb;
+    border-color: #47b8fa;
+}
+
+.border-success {
+    border-color: #47b8fa !important;
+}
+
+.blue {
+    color: #0195eb;
+}
+
+.fa fa-sign-in log-btn {
+    height: 40px;
+    width: 90%;
+    text-align: center;
+}
+</style>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
-
-<style>
-    .slow-spin {
-        -webkit-animation: fa-spin 4s infinite linear;
-        animation: fa-spin 4s infinite linear;
-    }
-</style>

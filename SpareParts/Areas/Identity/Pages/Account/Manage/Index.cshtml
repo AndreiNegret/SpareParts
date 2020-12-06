@@ -1,0 +1,99 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<h1 class="d-flex justify-content-center mt-5 mb-5">@ViewData["Title"]</h1>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<partial name="_StatusMessage" model="Model.StatusMessage" />
+
+
+<form id="profile-form" method="post" enctype="multipart/form-data" class="py-5">
+    <section>
+        <div class="row d-flex justify-content-center col-12">
+            <div class="col-sm-10 col-md-6 col-lg-4 border border-success rounded m-24 mb-5">
+                <div class="form-group">
+                    <div class="imgcontainer py-5">
+                        @{ if (Model.Input.UserPhoto == null)
+                            {
+                                <img src="~/images/avatar-1577909_1280.png" style="width:30%" />
+                            }
+                            else
+                            {
+                                <img src="@Model.Input.UserPhoto" style="width:80%; height:40%"> }
+                        }
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label asp-for="Input.UserPhoto" button id="update-profile-button" type="submit" class="btn btn-primary">Change Profile Picture</label>
+                    <input type="file" asp-for="Input.UserPhoto" class="form-control" accept=".png,.jpg,.jpeg,.gif,.tif" />
+                    <span asp-validation-for="Input.UserPhoto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Username"></label>
+                    <input asp-for="Username" class="form-control" disabled />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.PhoneNumber"></label>
+                    <input asp-for="Input.PhoneNumber" class="form-control" />
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+
+                    <label asp-for="Input.BirthdayDate"></label>
+                    <input type="date" asp-for="Input.BirthdayDate" class="form-control" />
+                    <span asp-validation-for="Input.BirthdayDate" class="text-danger"></span>
+                </div>*@
+                <div class="form-group">
+                    <button id="update-profile-button" type="submit" class="btn btn-primary">Update profile</button>
+                </div>
+                <div class="form-group">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+
+<style>
+    .btn-primary {
+        color: #fff;
+        background-color: #00c0cc;
+        border-color: #31d9ec;
+    }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #1d92b7;
+            border-color: #19d7ea;
+        }
+
+    .border-success {
+        border-color: #11c8c8 !important;
+    }
+
+    .form-control:focus {
+        border-color: #099b9b !important;
+        box-shadow: 0 0 2px rgba(28, 174, 187, 1) !important;
+    }
+
+    .profile-picture img {
+        height: 150px;
+    }
+
+    .imgcontainer {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin: auto;
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
