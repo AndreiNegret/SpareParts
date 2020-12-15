@@ -16,7 +16,7 @@
 <form id="profile-form" method="post" enctype="multipart/form-data" class="py-5">
     <section>
         <div class="row d-flex justify-content-center col-12">
-            <div class="col-sm-10 col-md-6 col-lg-4 border border-success rounded m-24 mb-5">
+            <div class="col-sm-10 col-md-6 col-lg-4 form-border rounded m-24 mb-5">
                 <div class="form-group">
                     <div class="imgcontainer py-5">
                         @{ if (Model.Input.UserPhoto == null)
@@ -73,8 +73,9 @@
             border-color: #19d7ea;
         }
 
-    .border-success {
-        border-color: #11c8c8 !important;
+    .form-border {
+        border: 1px solid #47b8fa;
+        border-radius: 3px;
     }
 
     .form-control:focus {

@@ -17,6 +17,7 @@ namespace SpareParts.Data
             : base(options)
         { }
         public virtual DbSet<Category> Categories { get; set; }
+        public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Product> Products { get; set; }

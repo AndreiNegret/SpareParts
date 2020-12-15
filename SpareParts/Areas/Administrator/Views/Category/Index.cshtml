@@ -39,7 +39,6 @@
                                     <td>
                                         <b>@category.Name</b>
                                     </td>
-                                    <td>@category.Description</td>
                                     <td> @(category.ParentCategory == null ? "": category.ParentCategory.Name)</td>
                                     <td>
                                         <a asp-area="administrator" asp-controller="category"
@@ -62,7 +61,6 @@
                                             <td>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@subCategory.Name
                                             </td>
-                                            <td>@subCategory.Description</td>
                                             <td> @subCategory.ParentCategory.Name</td>
                                             <td>
                                                 <a asp-area="administrator" asp-controller="category"

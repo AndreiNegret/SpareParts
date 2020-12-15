@@ -1,0 +1,311 @@
+﻿
+
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using SpareParts.Models;
+
+<!-- breadcrumbs -->
+<div class="breadcrumb_dress">
+    <div class="container">
+        <ul>
+            <li><a asp-controller="home" asp-action="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
+            <li><a asp-controller="product" asp-action="product">Products</a></li>
+        </ul>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- mobiles -->
+<div class="mobiles">
+    <div class="container">
+        <div class="w3ls_mobiles_grids">
+            <div class="col-md-4 w3ls_mobiles_grid_left">
+                <div class="w3ls_mobiles_grid_left_grid">
+                    <h3>Categories</h3>
+                    <div class="w3ls_mobiles_grid_left_grid_sub">
+
+                        @await Component.InvokeAsync("Category")
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-8 w3ls_mobiles_grid_right">
+
+
+                <div class="clearfix"> </div>
+
+                <div class="w3ls_mobiles_grid_right_grid2">
+                    <div class="w3ls_mobiles_grid_right_grid2_left">
+                        <h3>Showing Results: 0-1</h3>
+                    </div>
+                    <div class="w3ls_mobiles_grid_right_grid2_right">
+                        <select name="select_item" class="select_item">
+                            <option selected="selected">Default sorting</option>
+                            <option>Sort by popularity</option>
+                            <option>Sort by average rating</option>
+                            <option>Sort by newness</option>
+                            <option>Sort by price: low to high</option>
+                            <option>Sort by price: high to low</option>
+                        </select>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+
+                @await Component.InvokeAsync("Product")
+
+
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+
+@await Component.InvokeAsync("ProductDetails")
+
+<!-- Related Products -->
+<div class="w3l_related_products">
+    <div class="container">
+        <h3>Produse Asociate</h3>
+        <ul id="flexiselDemo2">
+            <li>
+                <div class="w3l_related_products_grid">
+                    <div class="agile_ecommerce_tab_left mobiles_grid">
+                        <div class="hs-wrapper hs-wrapper3">
+                            <img src="~/images/directie.png" alt=" " class="img-responsive" />
+                            <img src="~/images/directie2.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/directie3.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/directie.png" alt=" " class="img-responsive" />
+                            <img src="~/images/directie2.jpg" alt=" " class="img-responsive" />
+                            <div class="w3_hs_bottom">
+                                <div class="flex_ecommerce">
+                                    <a href="#" data-toggle="modal" data-target="#myModal6"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h5><a href="single.html">Elemente direcție(bieleta direcție, antiruliu, cap bară)</a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <p class="flexisel_ecommerce_cart"><span>144,98 lei</span> <i class="item_price">100,04 lei</i></p>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart">
+                                <input type="hidden" name="add" value="1">
+                                <input type="hidden" name="w3ls_item" value="Elemente directie(bieleta directie, antiruliu, cap bara)">
+                                <input type="hidden" name="amount" value="100.04">
+                                <button type="submit" class="w3ls-cart">Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="w3l_related_products_grid">
+                    <div class="agile_ecommerce_tab_left mobiles_grid">
+                        <div class="hs-wrapper hs-wrapper3">
+                            <img src="~/images/lamela3.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/lamela.png" alt=" " class="img-responsive" />
+                            <img src="~/images/lamela2.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/lamela3.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/lamela.png" alt=" " class="img-responsive" />
+                            <div class="w3_hs_bottom">
+                                <div class="flex_ecommerce">
+                                    <a href="#" data-toggle="modal" data-target="#myModal6"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h5><a href="single.html">Lamelă ștergător</a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <p class="flexisel_ecommerce_cart"><span>34,53 lei</span> <i class="item_price">23,83 lei</i></p>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart">
+                                <input type="hidden" name="add" value="1">
+                                <input type="hidden" name="w3ls_item" value="Lamelă ștergător">
+                                <input type="hidden" name="amount" value="23,83">
+                                <button type="submit" class="w3ls-cart">Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="w3l_related_products_grid">
+                    <div class="agile_ecommerce_tab_left mobiles_grid">
+                        <div class="hs-wrapper hs-wrapper3">
+                            <img src="~/images/nuca2.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/nuca.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/nuca3.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/nuca2.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/nuca.jpg" alt=" " class="img-responsive" />
+                            <div class="w3_hs_bottom">
+                                <div class="flex_ecommerce">
+                                    <a href="#" data-toggle="modal" data-target="#myModal6"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h5><a href="single.html">Nucă schimbător de viteze </a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <p class="flexisel_ecommerce_cart"><span>273,22 lei</span> <i class="item_price">188,52 lei</i></p>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart">
+                                <input type="hidden" name="add" value="1">
+                                <input type="hidden" name="w3ls_item" value="Nucă schimbător de viteze">
+                                <input type="hidden" name="amount" value="188,52">
+                                <button type="submit" class="w3ls-cart">Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="w3l_related_products_grid">
+                    <div class="agile_ecommerce_tab_left mobiles_grid">
+                        <div class="hs-wrapper hs-wrapper3">
+                            <img src="~/images/radiator.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/radiator2.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/radiator3.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/radiator.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/radiator2.jpg" alt=" " class="img-responsive" />
+                            <div class="w3_hs_bottom">
+                                <div class="flex_ecommerce">
+                                    <a href="#" data-toggle="modal" data-target="#myModal6"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h5><a href="single.html">Radiator climă </a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <p class="flexisel_ecommerce_cart"><span>662,45 lei</span> <i class="item_price">552,20 lei</i></p>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart">
+                                <input type="hidden" name="add" value="1">
+                                <input type="hidden" name="w3ls_item" value="Radiator climă">
+                                <input type="hidden" name="amount" value="552,20">
+                                <button type="submit" class="w3ls-cart">Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="w3l_related_products_grid">
+                    <div class="agile_ecommerce_tab_left mobiles_grid">
+                        <div class="hs-wrapper hs-wrapper3">
+                            <img src="~/images/oglinda1.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/oglinda2.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/oglinda3.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/oglinda1.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/oglinda2.jpg" alt=" " class="img-responsive" />
+                            <div class="w3_hs_bottom">
+                                <div class="flex_ecommerce">
+                                    <a href="#" data-toggle="modal" data-target="#myModal5"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h5><a href="single.html">Oglindă exterioară</a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <p class="flexisel_ecommerce_cart"><span>95,60 lei</span> <i class="item_price">65,96 lei</i></p>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="w3ls_item" value="Oglindă exterioară" />
+                                <input type="hidden" name="amount" value="65,96" />
+                                <button type="submit" class="w3ls-cart">Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="w3l_related_products_grid">
+                    <div class="agile_ecommerce_tab_left mobiles_grid">
+                        <div class="hs-wrapper hs-wrapper3">
+                            <img src="~/images/electro1.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/electro2.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/electro3.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/electro1.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/electro2.jpg" alt=" " class="img-responsive" />
+                            <div class="w3_hs_bottom">
+                                <div class="flex_ecommerce">
+                                    <a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h5><a href="single.html">Electromotor</a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <p class="flexisel_ecommerce_cart"><span>478,23 lei</span> <i class="item_price">329,98 lei</i></p>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="w3ls_item" value="Electromotor" />
+                                <input type="hidden" name="amount" value="329,98" />
+                                <button type="submit" class="w3ls-cart">Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="w3l_related_products_grid">
+                    <div class="agile_ecommerce_tab_left mobiles_grid">
+                        <div class="hs-wrapper hs-wrapper3">
+                            <img src="~/images/alternator.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/alternator2.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/alternator3.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/alternator.jpg" alt=" " class="img-responsive" />
+                            <img src="~/images/alternator2.jpg" alt=" " class="img-responsive" />
+                            <div class="w3_hs_bottom">
+                                <div class="flex_ecommerce">
+                                    <a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h5><a href="single.html">Alternator</a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <p><span>1273,92 lei</span> <i class="item_price">879,00 lei</i></p>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="w3ls_item" value="Alternator" />
+                                <input type="hidden" name="amount" value="879,00" />
+                                <button type="submit" class="w3ls-cart">Add to cart</button>
+                            </form>
+                        </div>
+                        <div class="mobiles_grid_pos">
+                            <h6>New</h6>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <script type="text/javascript">
+            $(window).load(function () {
+                $("#flexiselDemo2").flexisel({
+                    visibleItems: 4,
+                    animationSpeed: 1000,
+                    autoPlay: true,
+                    autoPlaySpeed: 3000,
+                    pauseOnHover: true,
+                    enableResponsiveBreakpoints: true,
+                    responsiveBreakpoints: {
+                        portrait: {
+                            changePoint: 568,
+                            visibleItems: 1
+                        },
+                        landscape: {
+                            changePoint: 667,
+                            visibleItems: 2
+                        },
+                        tablet: {
+                            changePoint: 768,
+                            visibleItems: 3
+                        }
+                    }
+                });
+
+            });
+        </script>
+
+        <script src="~/js/jquery.flexisel.js"></script>
+    </div>
+</div>
+

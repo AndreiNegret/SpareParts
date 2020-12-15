@@ -33,6 +33,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th>ProductName</th>
+                                <th>Description</th>
                                 <th>Price</th>
                                 <th>Photo</th>
                                 <th>Quantity</th>
@@ -43,25 +44,26 @@
                         <tbody>
                             @foreach (var product in ViewBag.Products)
                             {
-                                <tr>
-                                    <td>@product.ProductId</td>
-                                    <td>
-                                        <b>@product.ProductName</b>
-                                    </td>
-                                    <td>@product.Price</td>
-                                    <td><img src="/products/@product.Photo" style="width:50px;height:50px;" /></td>
-                                    <td>@product.Quantity</td>
-                                    <td>@product.Brand</td>
-                                    <td>
-                                        <a asp-area="administrator" asp-controller="product"
-                                           asp-action="edit" asp-route-id="@product.ProductId">Edit</a> <span>|</span>
+                            <tr>
+                                <td>@product.ProductId</td>
+                                <td>
+                                    <b>@product.ProductName</b>
+                                </td>
+                                <td>@product.Description</td>
+                                <td>@product.Price</td>
+                                <td><img src="/products/@product.Photo" style="width:50px;height:50px;" /></td>
+                                <td>@product.Quantity</td>
+                                <td>@product.Brand</td>
+                                <td>
+                                    <a asp-area="administrator" asp-controller="product"
+                                       asp-action="edit" asp-route-id="@product.ProductId">Edit</a> <span>|</span>
 
-                                        <a asp-area="administrator" asp-controller="product"
-                                           asp-action="delete" asp-route-id="@product.ProductId" onclick="return confirm('Are you sure?')">Delete</a>
+                                    <a asp-area="administrator" asp-controller="product"
+                                       asp-action="delete" asp-route-id="@product.ProductId" onclick="return confirm('Are you sure?')">Delete</a>
 
-                                    </td>
+                                </td>
 
-                                </tr>
+                            </tr>
 
                             }
 

@@ -81,7 +81,6 @@ namespace SpareParts.Areas.Administrator.Controllers
         {
             var currentCategory = db.Categories.Find(id);
             currentCategory.Name = category.Name;
-            currentCategory.Description = category.Description;
             db.SaveChanges();
             return RedirectToAction("Index", "category", new { area = "administrator" });
         }

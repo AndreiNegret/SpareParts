@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "ProductDetailComp";
+
+}
+
+@using SpareParts.Models;
+@{int i = 0;}
+@{string id = "idModal";}
+
+@foreach (var product in Model)
+{
+    i++;
+    id = id + i.ToString();
+
+    <div class="modal video-modal fade" id="@id" tabindex="-1" role="dialog" aria-labelledby="@id">
+
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <section>
+                    <div class="modal-body">
+                        <div class="col-md-5 modal_body_left">
+                            <img src="~/products/@product.Photo" alt=" " class="img-responsive" />
+                        </div>
+                        <div class="col-md-7 modal_body_right">
+                            <h4>@product.ProductName</h4>
+                            <p>
+                                @product.Description
+                            </p>
+                            <div class="rating">
+                                <div class="rating-left">
+                                    <img src="/images/star-.png" alt=" " class="img-responsive" />
+                                </div>
+                                <div class="rating-left">
+                                    <img src="/images/star-.png" alt=" " class="img-responsive" />
+                                </div>
+                                <div class="rating-left">
+                                    <img src="/images/star-.png" alt=" " class="img-responsive" />
+                                </div>
+                                <div class="rating-left">
+                                    <img src="/images/star-.png" alt=" " class="img-responsive" />
+                                </div>
+                                <div class="rating-left">
+                                    <img src="/images/star-.png" alt=" " class="img-responsive" />
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="modal_body_right_cart simpleCart_shelfItem">
+                                <p><i class="item_price">@product.Price</i></p>
+                                <form action="#" method="post">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="w3ls_item" value="">
+                                    <input type="hidden" name="amount" value="880.00">
+                                    <button type="submit" class="w3ls-cart">Add to cart</button>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </div>
+}

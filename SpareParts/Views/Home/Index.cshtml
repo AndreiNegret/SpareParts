@@ -1,11 +1,821 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<script type="text/javascript" src="~/javascript/particles.min.js"></script>
+<script type="text/javascript" src="~/javascript/app.js"></script>
+<script type="text/javascript" src="~/javascript/main.js"></script>
+
+<div class="banner-bottom">
+    <div class="container">
+        <div class="col-md-5 wthree_banner_bottom_left">
+            <div class="video-img">
+                <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
+                    <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>
+                </a>
+            </div>
+            <!-- pop-up-box -->
+
+            <script src="~/js/jquery.magnific-popup.js"></script>
+            <!--//pop-up-box -->
+            <div id="small-dialog" class="mfp-hide">
+                <iframe src="https://www.youtube.com/embed/Of8P8EkzQVA"></iframe>
+            </div>
+            <script>
+                $(document).ready(function () {
+                    $('.popup-with-zoom-anim').magnificPopup({
+                        type: 'inline',
+                        fixedContentPos: false,
+                        fixedBgPos: true,
+                        overflowY: 'auto',
+                        closeBtnInside: true,
+                        preloader: false,
+                        midClick: true,
+                        removalDelay: 300,
+                        mainClass: 'my-mfp-zoom-in'
+                    });
+
+                });
+            </script>
+        </div>
+        <div class="col-md-7 wthree_banner_bottom_right">
+            <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                <ul id="myTab" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">Piese auto de schimb</a></li>
+                    <li role="presentation"><a href="#audio" role="tab" id="audio-tab" data-toggle="tab" aria-controls="audio">Accesorii auto</a></li>
+
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+                        <div class="agile_ecommerce_tabs">
+                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                <div class="hs-wrapper">
+                                    <img src="/images/3.jpg" alt=" " class="img-responsive" />
+                                    <img src="/images/4.jpg" alt=" " class="img-responsive" />
+                                    <img src="/images/5.jpg" alt=" " class="img-responsive" />
+                                    <img src="/images/6.jpg" alt=" " class="img-responsive" />
+                                    <img src="/images/7.jpg" alt=" " class="img-responsive" />
+                                    <img src="/images/3.jpg" alt=" " class="img-responsive" />
+                                    <img src="/images/4.jpg" alt=" " class="img-responsive" />
+                                    <img src="/images/5.jpg" alt=" " class="img-responsive" />
+                                    <div class="w3_hs_bottom">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5><a href="single.html">Anvelope</a></h5>
+                                <div class="simpleCart_shelfItem">
+                                    <p><span>300 ron</span> <i class="item_price">220 ron bucata</i></p>
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="w3ls_item" value="Anvelope" />
+                                        <input type="hidden" name="amount" value="220RON" />
+                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                <div class="hs-wrapper">
+                                    <img src="images/frana4.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/frana1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/frana2.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/frana3.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/frana5.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/frana4.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/frana1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/frana2.jpg" alt=" " class="img-responsive" />
+                                    <div class="w3_hs_bottom">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5><a href="single.html">Sisteme de frânare</a></h5>
+                                <div class="simpleCart_shelfItem">
+                                    <p><span>445 ron</span> <i class="item_price">375 ron bucata</i></p>
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="w3ls_item" value="Set plăcuțe, disc frână" />
+                                        <input type="hidden" name="amount" value="375RON" />
+                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                <div class="hs-wrapper">
+                                    <img src="images/capac1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac2.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac3.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac4.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac5.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac2.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac3.jpg" alt=" " class="img-responsive" />
+                                    <div class="w3_hs_bottom">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5><a href="single.html">Capace roți</a></h5>
+                                <div class="simpleCart_shelfItem">
+                                    <p><span>142 ron</span> <i class="item_price">82 ron bucata</i></p>
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="w3ls_item" value="Capac roată" />
+                                        <input type="hidden" name="amount" value="82RON" />
+                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="clearfix"> </div>
+
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="audio" aria-labelledby="audio-tab">
+                        <div class="agile_ecommerce_tabs">
+                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                <div class="hs-wrapper">
+                                    <img src="images/kit1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/kit2.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/kit3.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/kit4.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/kit5.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/kit1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/kit2.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/kit3.jpg" alt=" " class="img-responsive" />
+                                    <div class="w3_hs_bottom">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5><a href="single.html">Kit senzori de parcare</a></h5>
+                                <div class="simpleCart_shelfItem">
+                                    <p><span>1220 ron</span> <i class="item_price">990 ron</i></p>
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="w3ls_item" value="Senzori de parcare" />
+                                        <input type="hidden" name="amount" value="990RON" />
+                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                <div class="hs-wrapper">
+                                    <img src="images/cov1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/cov2.png" alt=" " class="img-responsive" />
+                                    <img src="images/cov3.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/cov4.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/cov5.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/cov1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/cov2.png" alt=" " class="img-responsive" />
+                                    <img src="images/cov3.jpg" alt=" " class="img-responsive" />
+                                    <div class="w3_hs_bottom">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5><a href="single.html">Covorașe auto</a></h5>
+                                <div class="simpleCart_shelfItem">
+                                    <p><span>200 ron</span> <i class="item_price">135 ron</i></p>
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="w3ls_item" value="Covorașe" />
+                                        <input type="hidden" name="amount" value="135RON" />
+                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                <div class="hs-wrapper">
+                                    <img src="images/ulei2.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/ulei1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/ulei3.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/ulei4.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/ulei5.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/ulei2.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/ulei1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/ulei3.jpg" alt=" " class="img-responsive" />
+                                    <div class="w3_hs_bottom">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5><a href="single.html">Uleiuri și lichide</a></h5>
+                                <div class="simpleCart_shelfItem">
+                                    <p><span>600 ron</span> <i class="item_price">545 ron</i></p>
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="w3ls_item" value="Ulei și lichid" />
+                                        <input type="hidden" name="amount" value="545RON" />
+                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="video" aria-labelledby="video-tab">
+                        <div class="agile_ecommerce_tabs">
+                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                <div class="hs-wrapper">
+                                    <img src="images/capac1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac2.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac3.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac4.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac5.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac1.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac2.jpg" alt=" " class="img-responsive" />
+                                    <img src="images/capac3.jpg" alt=" " class="img-responsive" />
+                                    <div class="w3_hs_bottom">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                @*<h5><a href="single.html">Laptop</a></h5>
+                                                <div class="simpleCart_shelfItem">
+                                                    <p><span>$880</span> <i class="item_price">$850</i></p>
+                                                    <form action="#" method="post">
+                                                        <input type="hidden" name="cmd" value="_cart" />
+                                                        <input type="hidden" name="add" value="1" />
+                                                        <input type="hidden" name="w3ls_item" value="Laptop" />
+                                                        <input type="hidden" name="amount" value="850.00" />
+                                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                                    </form>
+                                                </div>
+                                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                                <div class="hs-wrapper">
+                                                    <img src="images/12.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/11.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/13.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/11.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/12.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/13.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/11.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/12.jpg" alt=" " class="img-responsive" />
+                                                    <div class="w3_hs_bottom">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h5><a href="single.html">Notebook</a></h5>
+                                                <div class="simpleCart_shelfItem">
+                                                    <p><span>$290</span> <i class="item_price">$280</i></p>
+                                                    <form action="#" method="post">
+                                                        <input type="hidden" name="cmd" value="_cart" />
+                                                        <input type="hidden" name="add" value="1" />
+                                                        <input type="hidden" name="w3ls_item" value="Notebook" />
+                                                        <input type="hidden" name="amount" value="280.00" />
+                                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                                <div class="hs-wrapper">
+                                                    <img src="images/13.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/11.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/12.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/11.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/12.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/13.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/11.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/12.jpg" alt=" " class="img-responsive" />
+                                                    <div class="w3_hs_bottom">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h5><a href="single.html">Kid's Toy</a></h5>
+                                                <div class="simpleCart_shelfItem">
+                                                    <p><span>$120</span> <i class="item_price">$80</i></p>
+                                                    <form action="#" method="post">
+                                                        <input type="hidden" name="cmd" value="_cart" />
+                                                        <input type="hidden" name="add" value="1" />
+                                                        <input type="hidden" name="w3ls_item" value="Kid's Toy" />
+                                                        <input type="hidden" name="amount" value="80.00" />
+                                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"> </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="tv" aria-labelledby="tv-tab">
+                                        <div class="agile_ecommerce_tabs">
+                                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                                <div class="hs-wrapper">
+                                                    <img src="images/14.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/15.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/16.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/14.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/15.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/16.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/14.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/15.jpg" alt=" " class="img-responsive" />
+                                                    <div class="w3_hs_bottom">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h5><a href="single.html">Refrigerator</a></h5>
+                                                <div class="simpleCart_shelfItem">
+                                                    <p><span>$950</span> <i class="item_price">$820</i></p>
+                                                    <form action="#" method="post">
+                                                        <input type="hidden" name="cmd" value="_cart" />
+                                                        <input type="hidden" name="add" value="1" />
+                                                        <input type="hidden" name="w3ls_item" value="Refrigerator" />
+                                                        <input type="hidden" name="amount" value="820.00" />
+                                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                                <div class="hs-wrapper">
+                                                    <img src="images/15.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/14.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/16.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/14.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/15.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/16.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/14.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/15.jpg" alt=" " class="img-responsive" />
+                                                    <div class="w3_hs_bottom">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h5><a href="single.html">LED Tv</a></h5>
+                                                <div class="simpleCart_shelfItem">
+                                                    <p><span>$700</span> <i class="item_price">$680</i></p>
+                                                    <form action="#" method="post">
+                                                        <input type="hidden" name="cmd" value="_cart" />
+                                                        <input type="hidden" name="add" value="1" />
+                                                        <input type="hidden" name="w3ls_item" value="LED Tv" />
+                                                        <input type="hidden" name="amount" value="680.00" />
+                                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                                <div class="hs-wrapper">
+                                                    <img src="images/16.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/14.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/15.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/14.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/15.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/16.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/14.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/15.jpg" alt=" " class="img-responsive" />
+                                                    <div class="w3_hs_bottom">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h5><a href="single.html">Washing Machine</a></h5>
+                                                <div class="simpleCart_shelfItem">
+                                                    <p><span>$520</span> <i class="item_price">$510</i></p>
+                                                    <form action="#" method="post">
+                                                        <input type="hidden" name="cmd" value="_cart" />
+                                                        <input type="hidden" name="add" value="1" />
+                                                        <input type="hidden" name="w3ls_item" value="Washing Machine" />
+                                                        <input type="hidden" name="amount" value="510.00" />
+                                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"> </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="kitchen" aria-labelledby="kitchen-tab">
+                                        <div class="agile_ecommerce_tabs">
+                                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                                <div class="hs-wrapper">
+                                                    <img src="images/17.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/18.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/19.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/17.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/18.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/19.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/17.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/18.jpg" alt=" " class="img-responsive" />
+                                                    <div class="w3_hs_bottom">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h5><a href="single.html">Grinder</a></h5>
+                                                <div class="simpleCart_shelfItem">
+                                                    <p><span>$460</span> <i class="item_price">$450</i></p>
+                                                    <form action="#" method="post">
+                                                        <input type="hidden" name="cmd" value="_cart" />
+                                                        <input type="hidden" name="add" value="1" />
+                                                        <input type="hidden" name="w3ls_item" value="Grinder" />
+                                                        <input type="hidden" name="amount" value="450.00" />
+                                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                                <div class="hs-wrapper">
+                                                    <img src="images/18.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/17.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/19.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/17.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/18.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/19.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/17.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/18.jpg" alt=" " class="img-responsive" />
+                                                    <div class="w3_hs_bottom">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h5><a href="single.html">Water Purifier</a></h5>
+                                                <div class="simpleCart_shelfItem">
+                                                    <p><span>$390</span> <i class="item_price">$350</i></p>
+                                                    <form action="#" method="post">
+                                                        <input type="hidden" name="cmd" value="_cart" />
+                                                        <input type="hidden" name="add" value="1" />
+                                                        <input type="hidden" name="w3ls_item" value="Water Purifier" />
+                                                        <input type="hidden" name="amount" value="350.00" />
+                                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 agile_ecommerce_tab_left">
+                                                <div class="hs-wrapper">
+                                                    <img src="images/19.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/17.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/18.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/17.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/18.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/19.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/17.jpg" alt=" " class="img-responsive" />
+                                                    <img src="images/18.jpg" alt=" " class="img-responsive" />
+                                                    <div class="w3_hs_bottom">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <h5><a href="single.html">Coffee Maker</a></h5>
+                                                <div class="simpleCart_shelfItem">
+                                                    <p><span>$250</span> <i class="item_price">$220</i></p>
+                                                    <form action="#" method="post">
+                                                        <input type="hidden" name="cmd" value="_cart" />
+                                                        <input type="hidden" name="add" value="1" />
+                                                        <input type="hidden" name="w3ls_item" value="Coffee Maker" />
+                                                        <input type="hidden" name="amount" value="220.00" />
+                                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>*@
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
 </div>
+<!-- //banner-bottom -->
+<!-- modal-video -->
+
+
+<!-- //modal-video -->
+<!-- banner-bottom1 -->
+@*<div class="banner-bottom1">
+        <div class="agileinfo_banner_bottom1_grids">
+            <div class="col-md-7 agileinfo_banner_bottom1_grid_left">
+                <h3>Grand Opening Event With flat<span>20% <i>Discount</i></span></h3>
+                <a href="products.html">Shop Now</a>
+            </div>
+            <div class="col-md-5 agileinfo_banner_bottom1_grid_right">
+                <h4>hot deal</h4>
+                <div class="timer_wrap">
+                    <div id="counter"> </div>
+                </div>
+                <script src="/js/jquery.countdown.js"></script>
+                <script src="/js/script.js"></script>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>*@
+<!-- //banner-bottom1 -->
+<!-- special-deals -->
+<div class="special-deals">
+    <div class="container">
+        <h2>Oferte speciale</h2>
+        <h3>Noi vă oferim cele mai noi oferte!</h3>
+        <div class="w3agile_special_deals_grids">
+            <div class="col-md-7 w3agile_special_deals_grid_left">
+                <div class="w3agile_special_deals_grid_left_grid">
+                    <img src="/images/21.jpg" alt=" " class="img-responsive" />
+                    <div class="w3agile_special_deals_grid_left_grid_pos1">
+                        <h5>20%<span>reducere</span></h5>
+                    </div>
+                </div>
+                <script src="~/js/jquery.wmuSlider.js"></script>
+                <script>
+                    $('.example1').wmuSlider();
+                </script>
+                <div class="w3agile_special_deals_grid_left_grid">
+                    <img src="/images/20.jpg" alt=" " class="img-responsive" />
+                    <div class="w3agile_special_deals_grid_left_grid_pos1">
+                        <h5>30%<span>reducere</span></h5>
+                    </div>
+                </div>
+                <script src="~/js/jquery.wmuSlider.js"></script>
+                <script>
+                    $('.example1').wmuSlider();
+                </script>
+                <div class="w3agile_special_deals_grid_left_grid">
+                    <img src="/images/amortizoare.jpg" alt=" " class="img-responsive" />
+                    <div class="w3agile_special_deals_grid_left_grid_pos1">
+                        <h5>40%<span>reducere</span></h5>
+                    </div>
+                </div>
+                <script src="~/js/jquery.wmuSlider.js"></script>
+                <script>
+                    $('.example1').wmuSlider();
+                </script>
+                <div class="w3agile_special_deals_grid_left_grid">
+                    <img src="/images/bujii.jpg" alt=" " class="img-responsive" />
+                    <div class="w3agile_special_deals_grid_left_grid_pos1">
+                        <h5>25%<span>reducere</span></h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- //special-deals -->
+<!-- new-products -->
+<div class="new-products">
+    <div class="container">
+        <h3>Produse Noi</h3>
+        <div class="agileinfo_new_products_grids">
+            <div class="col-md-3 agileinfo_new_products_grid">
+                <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
+                    <div class="hs-wrapper hs-wrapper1">
+                        <img src="/images/curea1.jpg" alt=" " class="img-responsive" />
+                        <img src="/images/curea2.jpg" alt=" " class="img-responsive" />
+                        <img src="/images/curea3.jpg" alt=" " class="img-responsive" />
+                        <div class="w3_hs_bottom w3_hs_bottom_sub">
+                            <ul>
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h5><a href="single.html">Curea transmisie cu caneluri VW, Opel, Skoda</a></h5>
+                    <div class="simpleCart_shelfItem">
+                        <p><span>101,46 lei</span> <i class="item_price">71,02 lei</i></p>
+                        <form action="#" method="post">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="add" value="1">
+                            <input type="hidden" name="w3ls_item" value="black">
+                            <input type="hidden" name="amount" value="500.00">
+                            <button type="submit" class="w3ls-cart">Add to cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 agileinfo_new_products_grid">
+                <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
+                    <div class="hs-wrapper hs-wrapper1">
+                        <img src="/images/far1.png" alt=" " class="img-responsive" />
+                        <div class="w3_hs_bottom w3_hs_bottom_sub">
+                            <ul>
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h5><a href="single.html">Far dreapta Mercedes Benz CLA, 2014</a></h5>
+                    <div class="simpleCart_shelfItem">
+                        <p><span>1550 lei</span> <i class="item_price">1375 lei</i></p>
+                        <form action="#" method="post">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="add" value="1">
+                            <input type="hidden" name="w3ls_item" value="Black Phone">
+                            <input type="hidden" name="amount" value="370.00">
+                            <button type="submit" class="w3ls-cart">Add to cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 agileinfo_new_products_grid">
+                <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
+                    <div class="hs-wrapper hs-wrapper1">
+                        <img src="/images/34.jpg" alt=" " class="img-responsive" />
+                        <img src="/images/33.jpg" alt=" " class="img-responsive" />
+                        <img src="/images/32.jpg" alt=" " class="img-responsive" />
+                        <img src="/images/35.jpg" alt=" " class="img-responsive" />
+                        <img src="/images/36.jpg" alt=" " class="img-responsive" />
+                        <div class="w3_hs_bottom w3_hs_bottom_sub">
+                            <ul>
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target="#myModal5"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h5><a href="single.html">Cutie portbagaj Thule Vector L , 430L , 30KG , black metallic</a></h5>
+                    <div class="simpleCart_shelfItem">
+                        <p><span>1800 lei</span> <i class="item_price">1400 lei</i></p>
+                        <form action="#" method="post">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="add" value="1">
+                            <input type="hidden" name="w3ls_item" value="Kids Toy">
+                            <input type="hidden" name="amount" value="100.00">
+                            <button type="submit" class="w3ls-cart">Add to cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 agileinfo_new_products_grid">
+                <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
+                    <div class="hs-wrapper hs-wrapper1">
+                        <img src="/images/37.jpg" alt=" " class="img-responsive" />
+                        <img src="/images/38.jpg" alt=" " class="img-responsive" />
+                        <img src="/images/39.jpg" alt=" " class="img-responsive" />
+                        <img src="/images/40.jpg" alt=" " class="img-responsive" />
+                        <img src="/images/41.jpg" alt=" " class="img-responsive" />
+                        <div class="w3_hs_bottom w3_hs_bottom_sub">
+                            <ul>
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target="#myModal6"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h5><a href="single.html">Bare transversale Menabo Sherman pentru Volkswagen Passat (B8) Alltrack 2014+</a></h5>
+                    <div class="simpleCart_shelfItem">
+                        <p><span>1000 lei</span> <i class="item_price">729 lei</i></p>
+                        <form action="#" method="post">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="add" value="1">
+                            <input type="hidden" name="w3ls_item" value="Induction Stove">
+                            <input type="hidden" name="amount" value="250.00">
+                            <button type="submit" class="w3ls-cart">Add to cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- //new-products -->
+<!-- top-brands -->
+<div class="top-brands">
+    <div class="container">
+        <h3>Top Branduri</h3>
+        <div class="sliderfig">
+            <ul id="flexiselDemo1">
+                <li>
+                    <img src="~/images/audi.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/bmw.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/mercedes.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/cadillac.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/jaguar.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/jeep.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/mazda.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/porsche.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/skoda.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/vw.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/chevy.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/nissan.png" alt=" " class="img-responsive" />
+                </li>
+                <li>
+                    <img src="~/images/volvo.png" alt=" " class="img-responsive" />
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            $(window).load(function () {
+                $("#flexiselDemo1").flexisel({
+                    visibleItems: 4,
+                    animationSpeed: 1000,
+                    autoPlay: true,
+                    autoPlaySpeed: 3000,
+                    pauseOnHover: true,
+                    enableResponsiveBreakpoints: true,
+                    responsiveBreakpoints: {
+                        portrait: {
+                            changePoint: 480,
+                            visibleItems: 1
+                        },
+                        landscape: {
+                            changePoint: 640,
+                            visibleItems: 2
+                        },
+                        tablet: {
+                            changePoint: 768,
+                            visibleItems: 3
+                        }
+                    }
+                });
+
+            });
+        </script>
+
+        <script src="~/js/jquery.flexisel.js"></script>
+    </div>
+</div>
+
+@*<section class="flat-submit style3 parallax parallax1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box-submit">
+                        <h2>WE ARE TRUSTED PARTNER</h2>
+                        <p>We have collaborated with different, numerous other organizations such as BCR, BRD, ING in order to grow our level of experience and to become a more reliable business service. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="particles-js"></div>
+    </section>*@
 
 <!-- Modal -->
 <div class="modal fade" id="login-confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="login-confirmation-modal" aria-hidden="true">

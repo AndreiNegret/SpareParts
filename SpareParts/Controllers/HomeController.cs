@@ -19,6 +19,7 @@ namespace SpareParts.Controllers
             _logger = logger;
         }
 
+
         [AllowAnonymous]
         public IActionResult Index()
         {

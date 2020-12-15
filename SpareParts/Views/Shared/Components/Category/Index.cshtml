@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "CategoryComp";
+
+}
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+    @{int i = 0;}
+    @{string id = "id";}
+    @foreach (var category in Model)
+    {
+        i++;
+        id = id + i.ToString();
+
+
+        @if (category.Children != null)
+        {
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading" role="tab" id="headingOne">
+
+                    <h4 class="panel-title asd">
+                        <a class="pa_italic" role="button" data-toggle="collapse" href="#@id" aria-expanded="true" aria-controls=@id {
+                           }">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>@category.Name
+
+                        </a>
+                    </h4>
+
+
+                </div>
+
+
+                <div id="@id" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body panel_text">
+                        <ul>
+                            @foreach (var subCategory in category.Children)
+                            {
+
+
+                                <li><a asp-controller="product" asp-action="category" asp-route-id="@subCategory.CategoryId">@subCategory.Name</a></li>
+
+
+
+
+
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        }
+    }
+</div>
