@@ -1,0 +1,14 @@
+﻿.wishlist {
+    position: fixed;
+    right: 0;
+    top: 15%;
+    width: 40vw;
+    z-index: 999999;
+    overflow: auto;
+    min-height: 300px;
+    max-height: 800px;
+}
+
+.wishlist .list-group {
+    flex-direction: column;
+}

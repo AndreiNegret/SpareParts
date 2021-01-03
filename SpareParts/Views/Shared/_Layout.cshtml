@@ -13,6 +13,8 @@
     <link href="~/css/fasthover.css" rel="stylesheet" />
     <link href="~/css/popuo-box.css" rel="stylesheet" />
     <link href="~/css/spacing.css" rel="stylesheet" />
+    <link href="~/css/wishlist.css" rel="stylesheet" />
+
     <!-- //Custom Theme files -->
     <!-- font-awesome icons -->
     <link href="~/css/font-awesome.css" rel="stylesheet" />
@@ -27,6 +29,7 @@
     <!-- //web fonts -->
     <!-- for bootstrap working -->
 
+
     <script src="~/js/bootstrap-3.1.1.min.js"></script>
     <!-- start-smooth-scrolling -->
     <script type="text/javascript">
@@ -37,6 +40,20 @@
             });
         });
     </script>
+
+    <!--Vue script-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="~/js/app.js"></script>
+
+    <!-- Vue components -->
+    <script src="~/js/Vue/Components/AddToWishlist.js"></script>
+    <script src="~/js/Vue/Components/Wishlist.js"></script>
+
+    <!-- Vuex -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.5.1/vuex.min.js"></script>
+
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
 </head>
 <body>
 
@@ -85,6 +102,7 @@
                         <li class="dropdown">
                             @*<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>*@
                         <li><a asp-area="" asp-controller="product" asp-action="product">Products</a></li>
+                        <li><a asp-area="" asp-controller="wishlist" asp-action="wishlist">Wishlist</a></li>
                         <ul class="dropdown-menu multi-column columns-3">
                             <div class="row">
                                 <div class="col-sm-3">
@@ -141,7 +159,7 @@
 
 
     <div class="container">
-        <main role="main" class="pb-3">
+        <main id="app" role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>

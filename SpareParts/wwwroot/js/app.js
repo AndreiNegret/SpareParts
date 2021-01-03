@@ -11,7 +11,7 @@ particlesJS.load('particles-js', 'particles.json', function() {
 
 /* Otherwise just put the config content (json): */
 
-particlesJS('particles-js',
+/*particlesJS('particles-js',
   
   {
     "particles": {
@@ -129,5 +129,35 @@ particlesJS('particles-js',
       "background_size": "cover"
     }
   }
+   
+);*/
 
-);
+// configure Vue and Vuex
+$(document).ready(function () {
+    Vue.use(Vuex);
+
+    const store = new Vuex.Store({
+        state: {
+            wishlist: []
+        },
+        mutations: {
+            addToWishList(state, item) {
+                for (const prod of state.wishlist) {
+                    if (prod.productId == item.productId) {
+                        alert('Produsul a fost adaugat deja in wishlist');
+                        return;
+                    }
+                }
+                state.wishlist.push(item);
+            },
+            removeItem(state, idx) {
+                state.wishlist.splice(idx, 1);
+            }
+        }
+    });
+
+    new Vue({
+        el: '#products-grid',
+        store: store
+    });
+});

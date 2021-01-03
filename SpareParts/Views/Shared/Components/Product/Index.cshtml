@@ -3,10 +3,14 @@
 
 }
 
-<div class="w3ls_mobiles_grid_right_grid3">
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<div id="products-grid" class="w3ls_mobiles_grid_right_grid3">
 
     @{int i = 0;}
-    @{string id = "idModal";}
+    @{string id = "idModal";
+    }
     @foreach (var product in Model)
     {
         i++;
@@ -27,14 +31,20 @@
                     </div>
                 </div>
 
-
-                <div class="mobiles_grid_pos">
-                    <h6>New</h6>
-                </div>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <div class="row my-3">
+                        <add-to-wishlist :product="@Utils.ToJson(product)" user-id="@UserManager.GetUserId(User)" />
+                    </div>
+                }
             </div>
         </div>
 
 
         <div class="clearfix"> </div>
     }
+
+    <div class="wishlist">
+        <wishlist/>
+    </div>
 </div>

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace SpareParts.Models
@@ -20,7 +22,9 @@ namespace SpareParts.Models
         public int? ParentCategoryId { get; set; }
 
         public virtual Category ParentCategory { get; set; }
+
         public virtual ICollection<Category> Children { get; set; }
+
         public virtual ICollection<Product> Products { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace SpareParts.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductWishList> ProductWishLists { get; set; }
 
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<User> User { get; set; }
