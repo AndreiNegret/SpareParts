@@ -1,0 +1,57 @@
+﻿@model SpareParts.ViewModel.ShoppingCartViewModel
+
+@{ var pageName = "Shopping Cart";
+    ViewData["Title"] = pageName; }
+
+<h2>Your @pageName</h2>
+<h4>Here is the product</h4>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Selected Amount</th>
+            <th>Product</th>
+            <th>Photo</th>
+            @*<th>Category</th>*@
+            <th class="text-right">Price</th>
+            <th class="text-right">Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+        {
+<tr>
+    <td class="text-center"><a class="btn btn-default" asp-action="RemoveFromShoppingCart" asp-route-Id="@line.Product.ProductId"><b>-</b></a>          <b>@line.Amount</b>          <a class="btn btn-default" asp-action="AddToShoppingCart" asp-route-Id="@line.Product.ProductId"><b>+</b></a></td>
+    <td class="text-left">@line.Product.ProductName</td>
+    <td><img src="/products/@line.Product.Photo" class="img-responsive img-width" /></td>
+    @*<td>@line.Product.Category.Children</td>*@
+    <td class="text-right">@line.Product.Price.ToString("c")</td>
+    <td class="text-right">
+        @((line.Amount * line.Product.Price).ToString("c"))
+    </td>
+</tr>}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4" class="text-right">Total:</td>
+            <td class="text-right">
+                @Model.ShoppingCartTotal.ToString("c")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<div align="right">
+    @if (Model.ShoppingCartTotal > 0)
+    {
+<a asp-controller="payment" asp-action="checkout" class="btn btn-primary">Check Out</a>}
+</div>
+<div align="left">
+    <a asp-controller="cart" asp-action="clearCart" class="btn btn-danger">Clear Cart</a>
+</div>
+
+<style>
+    .img-width {
+        width: 125px;
+    }
+</style>
+

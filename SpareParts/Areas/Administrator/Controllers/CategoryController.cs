@@ -13,7 +13,6 @@ namespace SpareParts.Areas.Administrator.Controllers
     [Area("administrator")]
     [Route("administrator/category")]
     public class CategoryController : Controller
-
     {
 
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -23,8 +22,6 @@ namespace SpareParts.Areas.Administrator.Controllers
 
             db = _db;
         }
-
-
 
         [Route("")]
         [Route("index")]

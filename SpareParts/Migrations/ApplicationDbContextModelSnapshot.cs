@@ -170,27 +170,6 @@ namespace SpareParts.Migrations
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("SpareParts.Models.Inventory", b =>
-                {
-                    b.Property<int>("InventoryId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("InventoryId");
-
-                    b.ToTable("Inventories");
-                });
-
             modelBuilder.Entity("SpareParts.Models.Order", b =>
                 {
                     b.Property<int>("OrderId")
@@ -198,36 +177,91 @@ namespace SpareParts.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("OrderDate")
+                    b.Property<string>("AddressLine1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("AddressLine2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("OrderPlaced")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("OrderNumber")
-                        .HasColumnType("int");
+                    b.Property<decimal>("OrderTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(25)")
+                        .HasMaxLength(25);
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
 
                     b.HasKey("OrderId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("SpareParts.Models.Payment", b =>
+            modelBuilder.Entity("SpareParts.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("PaymentId")
+                    b.Property<int>("OrderDetailId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<double>("Amount")
-                        .HasColumnType("float");
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<string>("PaymentType")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("PaymentId");
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
 
-                    b.ToTable("Payments");
+                    b.HasKey("OrderDetailId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("SpareParts.Models.Product", b =>
@@ -249,8 +283,8 @@ namespace SpareParts.Migrations
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Price")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
                     b.Property<string>("ProductName")
                         .HasColumnType("nvarchar(max)");
@@ -285,7 +319,30 @@ namespace SpareParts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("productWishLists");
+                    b.ToTable("ProductWishLists");
+                });
+
+            modelBuilder.Entity("SpareParts.Models.ShoppingCartItem", b =>
+                {
+                    b.Property<int>("ShoppingCartItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShoppingCartId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ShoppingCartItemId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ShoppingCartItems");
                 });
 
             modelBuilder.Entity("SpareParts.Models.Supplier", b =>
@@ -444,6 +501,28 @@ namespace SpareParts.Migrations
                         .HasForeignKey("ParentCategoryId");
                 });
 
+            modelBuilder.Entity("SpareParts.Models.Order", b =>
+                {
+                    b.HasOne("SpareParts.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("SpareParts.Models.OrderDetail", b =>
+                {
+                    b.HasOne("SpareParts.Models.Order", "Order")
+                        .WithMany("OrderLines")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SpareParts.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("SpareParts.Models.Product", b =>
                 {
                     b.HasOne("SpareParts.Models.Category", "Category")
@@ -457,6 +536,13 @@ namespace SpareParts.Migrations
                         .HasForeignKey("SupplierId")
                         .HasConstraintName("FK_Supplier_Product")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SpareParts.Models.ShoppingCartItem", b =>
+                {
+                    b.HasOne("SpareParts.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId");
                 });
 #pragma warning restore 612, 618
         }

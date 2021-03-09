@@ -17,11 +17,11 @@ namespace SpareParts.Data
             : base(options)
         { }
         public virtual DbSet<Category> Categories { get; set; }
-        public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Payment> Payments { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductWishList> ProductWishLists { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<User> User { get; set; }

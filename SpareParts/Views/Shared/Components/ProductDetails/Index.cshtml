@@ -53,10 +53,16 @@
                                 <p><i class="item_price">@product.Price</i></p>
                                 <form action="#" method="post">
                                     <input type="hidden" name="cmd" value="_cart">
-                                    <input type="hidden" name="add" value="1">
-                                    <input type="hidden" name="w3ls_item" value="">
-                                    <input type="hidden" name="amount" value="880.00">
-                                    <button type="submit" class="w3ls-cart">Add to cart</button>
+                                    <input type="hidden" name="add" value="@product.Quantity">
+                                    <input type="hidden" name="w3ls_item" value="@product.ProductName">
+                                    <input type="hidden" name="amount" value="@product.Price">
+                                    @*<button type="submit" class="w3ls-cart">Add to cart</button>*@
+
+                                <p class="button">
+                                    <a class="btn btn-primary" asp-controller="cart" asp-action="buy"
+                                       asp-route-id="@product.ProductId">Add to cart</a>
+                                    <a class="btn btn-primary" id="addPreferate" onclick="getProductId(@product.ProductId)">Add Favorites</a>
+                                </p>
                                 </form>
                             </div>
 
@@ -69,3 +75,4 @@
         </div>
     </div>
 }
+<script src="~/js/favorite.js"></script>

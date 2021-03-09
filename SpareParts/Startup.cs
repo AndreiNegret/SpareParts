@@ -17,6 +17,8 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Authentication;
 using SpareParts.Models;
 using SpareParts.Services;
+using SpareParts.Repository.Interfaces;
+using SpareParts.Repository;
 
 namespace SpareParts
 {
@@ -32,6 +34,7 @@ namespace SpareParts
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -39,10 +42,19 @@ namespace SpareParts
             //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             //    .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(1);
+            });
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            services.AddTransient<IProductRepository, ProductRepository>();
+
+            services.AddTransient<IOrderRepository, OrderRepository>();
+
             services.AddScoped<IAuthService, AuthService>();
+
+            services.AddScoped(sp => ShoppingCart.GetCart(sp));
 
             services.AddIdentity<User, IdentityRole>()
             .AddRoles<IdentityRole>()
@@ -111,6 +123,8 @@ namespace SpareParts
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

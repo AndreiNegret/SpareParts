@@ -1,0 +1,10 @@
+﻿
+    @*<form  method="post" class="last">
+        <input type="hidden" name="cmd" value="_cart" />
+        <input type="hidden" name="display" value="1" />
+        <button asp-controller="cart" class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+    </form>*@
+
+    <a id="myCart" asp-controller="cart" class="fa fa-cart-arrow-down" aria-hidden="true" >
+        @*<img src="themes/images/ico-cart.png">*@ @ViewBag.countItems Item(s) <span class="badge badge-warning pull-right">@ViewBag.Total Ron</span>
+    </a>
